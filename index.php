@@ -12,7 +12,12 @@
  define('DS', DIRECTORY_SEPARATOR);
 
  /*** include the init.php file ***/
- include 'lib'.DS.'init.php';
+ include  'lib'.DS.'init.php';
+
+ $config = config::getInstance();
+
+ // set the timezone
+date_default_timezone_set($config->config_values['application']['timezone']);
 
  /*** load the router ***/
  $registry->router = new router($registry);

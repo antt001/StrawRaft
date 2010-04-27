@@ -3,6 +3,7 @@
 ; config file for s2g
 
 [application]
+timezone = "Asia/Jerusalem"
 process_user_status = false
 cookie_expire = 3600
 
