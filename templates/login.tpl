@@ -4,7 +4,7 @@
 <head>
 <title>Shark2Go</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
-
+<meta name="viewport" content="width=device-width" />
 </head>
 <body onload="self.focus();document.form1.{$pvar}.focus();">
 	<div id = "header">

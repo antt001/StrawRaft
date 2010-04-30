@@ -7,9 +7,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Shark2Go</title>
+<title>StrawRaft</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
-
+<meta name="viewport" content="width=device-width" />
 </head>
 <body onload="self.focus();document.form1.<?php echo $pvar; ?>.focus();">
 	<div id = "header">
