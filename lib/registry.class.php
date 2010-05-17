@@ -1,5 +1,18 @@
 <?php
-
+/**
+ *
+ * @Registry class to store
+ * @system wide variables
+ * 
+ * @copyright (c) 2010 Antt
+ * @
+ * @version 0.0.2
+ * @license MIT http://www.opensource.org/licenses/mit-license.php
+ * @filesource
+ * @package StrawRaft
+ * @Based on Kevin Waterson PHPRO.ORG
+ *
+ */
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
     die ('<h2>Direct File Access Prohibited</h2>');
 

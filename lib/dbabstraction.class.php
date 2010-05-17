@@ -2,12 +2,11 @@
 /**
  *
  * @Lite weight Database abstraction layer
- *
- * @copyright
- *
- * @license Creative Commons Attribution 3.0 Unported CC http://creativecommons.org/licenses/by/3.0/
+ * @
+ * @version 0.0.2
+ * @license MIT http://www.opensource.org/licenses/mit-license.php
  * @filesource
- * @package Database
+ * @package StrawRaft
  * @Based on Kevin Waterson PHPRO.ORG
  *
  */

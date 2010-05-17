@@ -4,12 +4,13 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
 
 Class indexController Extends baseController {
 
-public function index() {
-	/*** set a template variable ***/
-        $this->registry->template->welcome = 'Welcome to PHPRO MVC';
-	/*** load the index template ***/
+    public function index() {
+        /*** set a template variable ***/
+        $this->registry->template->module = 'welcome';
+        
+        /*** load the index template ***/
         $this->registry->template->show('index');
-}
+    }
 
 }
 

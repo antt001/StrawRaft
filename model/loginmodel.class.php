@@ -1,4 +1,11 @@
 <?php
+/**
+ *
+ * @Copyright (c) 2010 Antt
+ *
+ * @license MIT http://www.opensource.org/licenses/mit-license.php
+ *
+ */
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
     die ('<h2>Direct File Access Prohibited</h2>');
 

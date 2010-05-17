@@ -3,15 +3,16 @@
  *
  * @Singleton to create database connection
  *
- * @copyright 
- *
- * @version 
- * @license Creative Commons Attribution 3.0 Unported CC http://creativecommons.org/licenses/by/3.0/
+ * @copyright (c) 2010 Antt
+ * @
+ * @version 0.0.2
+ * @license MIT http://www.opensource.org/licenses/mit-license.php
  * @filesource
- * @package Database
+ * @package StrawRaft
  * @Based on Kevin Waterson PHPRO.ORG
  *
  */
+
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
     die ('<h2>Direct File Access Prohibited</h2>');
 

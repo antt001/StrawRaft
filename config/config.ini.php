@@ -1,11 +1,13 @@
 ;<?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']);die ('<h2>Direct File Access Prohibited</h2>'); ?>
 
-; config file for s2g
+; config file for StrawRaft
 
 [application]
+site_title = StrawRaft
 timezone = "Asia/Jerusalem"
 process_user_status = false
 cookie_expire = 3600
+templates_compile_dir = /home/antt/workspace/templates_c/
 
 ;[database]
 ;db_type = oci

@@ -1,4 +1,15 @@
 <?php
+/**
+ *
+ * @Controller abstraction layer
+ * @
+ * @version 0.0.2
+ * @license MIT http://www.opensource.org/licenses/mit-license.php
+ * @filesource
+ * @package StrawRaft
+ * @Based on Kevin Waterson PHPRO.ORG
+ *
+ */
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
     die ('<h2>Direct File Access Prohibited</h2>');
 
@@ -9,6 +20,9 @@ Abstract Class baseController {
  */
 protected $registry;
 
+/*
+ * @the errors array
+ */
 protected $_cookie_expire;
 
 function __construct($registry) {
@@ -26,6 +40,8 @@ function __construct($registry) {
  *
  * @return void
  *
+ * @todo think of better solution for session/cookie
+ *
  */
  public function sessionSet($index, $value)
  {
@@ -41,6 +57,7 @@ function __construct($registry) {
  *
  * @return mixed
  *
+ * @todo think of better solution for session/cookie
  */
  public function sessionGet($index)
  {
@@ -51,9 +68,25 @@ function __construct($registry) {
         return false;
  }
 
+ /**
+ *
+ * @Remove session vars
+ *
+ * @param string $index
+ *
+ * @return void
+ *
+ * @todo think of better solution for session/cookie
+ */
+ public function sessionRemove($index)
+ {
+	unset($_SESSION[$index]);
+        setcookie($index, '', -1);
+ }
+
 
 /**
- * @all controllers must contain an index method
+ * @abstract all controllers must contain an index method
  */
 abstract function index();
 }

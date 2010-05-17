@@ -1,4 +1,16 @@
 <?php
+/**
+ *
+ * @Singleton validator class
+ *
+ * @copyright (c) 2010 Antt
+ * @
+ * @version 0.0.2
+ * @license MIT http://www.opensource.org/licenses/mit-license.php
+ * @filesource
+ * @package StrawRaft
+ *
+ */
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
     die ('<h2>Direct File Access Prohibited</h2>');
 
@@ -49,9 +61,9 @@ class validator
 	 *
 	 * @access public
 	 *
-	 * @param string $value:Validation value
+	 * @param string $value Validation value
 	 *
-	 * @param string $description:Error description
+	 * @param string $description Error message
 	 *
 	 * @return bool
 	 *
@@ -73,11 +85,11 @@ class validator
 	 *
 	 * @access public
 	 *
-	 * @param string $value:Validation value
+	 * @param string $value Validation value
 	 *
-	 * @param string $min_len:minimual leght of value
+	 * @param string $min_len minimual leght of value
 	 *
-	 * @param string $description:Error description
+	 * @param string $description Error description
 	 *
 	 * @return bool
 	 *
@@ -90,24 +102,49 @@ class validator
 			return false;
 		}
 	}
-	
-	// Return a string containing a list of errors found,
-	// Seperated by a given deliminator
+
+
+        /**
+         * @listErrors returns a string containing a list of errors found,
+	 * @Seperated by a given deliminator
+         *
+         * @param string $delim error separator
+         *
+	 * @return string list of errors
+	 *
+	 */
 	public function listErrors($delim = ' '){
 		return implode($delim,$this->errors);
 	}
-	
+
+        /**
+         * @clearErrors resets the error array
+         *
+	 * @return void
+	 *
+	 */
 	public function clearErrors(){
 		$errors = array();
 	}
 
-        // Manually add something to the list of errors
+        /**
+         * @Manually add something to the list of errors
+         *
+         * @param string $description the error strin
+         *
+	 * @return void
+	 *
+	 */
 	public function addError($description){
 		$this->errors[] = $description;
 	}
 
-        // Check whether any errors have been found (i.e. validation has returned false)
-	// since the object was created
+        /**
+         * @Check whether any errors have been found
+         * (i.e. validation has returned false)
+         *
+         * @return bool 
+         */
 	function foundErrors() {
 		if (count($this->errors) > 0){
 			return true;

@@ -17,7 +17,7 @@
  $config = config::getInstance();
 
  // set the timezone
-date_default_timezone_set($config->config_values['application']['timezone']);
+ date_default_timezone_set($config->config_values['application']['timezone']);
 
  /*** load the router ***/
  $registry->router = new router($registry);

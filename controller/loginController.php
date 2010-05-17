@@ -27,7 +27,7 @@ Class loginController Extends baseController {
     }
 
     public function index() {
-        $this->login();
+        $this->verifiy();
 
     }
 
@@ -35,25 +35,41 @@ Class loginController Extends baseController {
         $this->registry->template->title = 'Member Register';
         $this->registry->template->pvar = 'user';
         $this->registry->template->subtitle = 'Username:';
-        $this->registry->template->show('login_index');
+        $this->registry->template->module = 'login';
+        $this->registry->template->show('index');
+    }
+
+    public function logout() {
+        $this->sessionRemove('user');
+        $this->sessionRemove('password');
+        $this->login();
+        return;
     }
 
     public function password() {
         $this->registry->template->title = 'Member Login';
+        $this->registry->template->user = $this->_username;
         $this->registry->template->pvar = 'password';
         $this->registry->template->subtitle = 'Password:';
-        $this->registry->template->show('login_index');
+        $this->registry->template->module = 'login';
+        $this->registry->template->show('index');
     }
     
     public function success() {
         $this->registry->template->title = 'Login success';
+        $this->registry->template->user = $this->_username;
         $this->registry->template->pvar = '';
-        $this->registry->template->subtitle = 'Welcome '.$this->_username;
-        $this->registry->template->show('login_index');
+        $this->registry->template->module = 'login';
+        $this->registry->template->show('index');
     }
 
     public function verifiy() {
-        if($this->_username != false && !$this->model->verifyLogin($this->_username)) {
+        if($this->_username == false){
+            $this->login();
+            return false;
+        }
+        
+        if(!$this->model->verifyLogin($this->_username)) {
             $this->registry->template->msg = $this->validator->listErrors('<br />');
             $this->validator->clearErrors();
             $this->login();

@@ -34,7 +34,3 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
 
  /*** a new registry object ***/
  $registry = new registry;
-
- /*** create the database registry object ***/
- //$registry->db = db::getInstance();
-?>
