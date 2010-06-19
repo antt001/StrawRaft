@@ -3,18 +3,9 @@
      die ('<h2>Direct File Access Prohibited</h2>');
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>StrawRaft</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
-<meta name="viewport" content="width=device-width" />
-</head>
-<body onload="self.focus();document.form1.<?php echo $pvar; ?>.focus();">
 	<div id = "header">
-		<h1>Shark2Go</h1>
-		<h2>Welcome <?php $user ?>.</h2>
+		<h1><?php echo $site_title; ?></h1>
+		<h2>Welcome <?php echo isset($user) ? $user : 'guest'; ?>.</h2>
 	</div>
 <?php
 if(!empty($msg)){
@@ -36,7 +27,7 @@ if(!empty($msg)){
 <?php
 if(!empty($pvar)){
     echo '<input name="'.$pvar.'" id="'.$pvar.'"';
-    echo 'type="'.($pvar == 'pass' ? 'password' : "text").'" size="14" />';
+    echo 'type="'.($pvar == 'password' ? 'password' : "text").'" size="14" />';
 }
 ?>
 </td>
@@ -45,11 +36,11 @@ if(!empty($pvar)){
 <?php
 if(!empty($pvar)){
     echo '<td><input type="submit" name="submit" value="Send" /></td>';
+} else {
+	echo '<td><button type="button" onclick="window.location = \''.$_SERVER['PHP_SELF'].'?rt=login/logout\'">Logout</button></td>';
 }
 ?>
 </tr>
 </table>
 </form>
 
-</body>
-</html>

@@ -16,8 +16,6 @@
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
     die ('<h2>Direct File Access Prohibited</h2>');
 
-include('smarty/Smarty.class.php');
-
 Class Template {
 
 /*
@@ -32,13 +30,6 @@ private $registry;
  */
 private $vars = array();
 
-/*
- * @Smarty object
- * @access private
- */
-private $_smarty;
-
-
 /**
  *
  * @constructor
@@ -49,11 +40,9 @@ private $_smarty;
  *
  */
 function __construct($registry) {
+	$config = config::getInstance();
 	$this->registry = $registry;
-        $config = config::getInstance();
-        $this->_smarty = new Smarty;
-        $this->site_title = $config->config_values['application']['site_title'];
-        $this->_smarty->compile_dir = $config->config_values['application']['templates_compile_dir'];
+	$this->site_title = $config->config_values['application']['site_title'];
 }
 
 
@@ -75,7 +64,7 @@ function __construct($registry) {
 
 
 function show($name) {
-	$path = __SITE_PATH . DS .'templates' . DS . $name . '.tpl';
+	$path = __SITE_PATH . DS .'views' . DS . $name . '.php';
 
 	if (file_exists($path) == false)
 	{
@@ -86,13 +75,11 @@ function show($name) {
 	// Load variables
 	foreach ($this->vars as $key => $value)
 	{
-            $this->_smarty->assign($key, $value);
-            //$$key = $value;
+		$$key = $value;
 	}
 
-	//include ($path);
-        $this->_smarty->display($path);
-  }
+	include ($path);               
+}
 
 
 }
