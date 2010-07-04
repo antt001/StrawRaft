@@ -20,15 +20,17 @@
  date_default_timezone_set($config->config_values['application']['timezone']);
 
  /*** load the router ***/
- $registry->router = new router($registry);
+ $registry->dispatcher = new dispatcher($registry);
 
  /*** set the controller path ***/
- $registry->router->setPath (__SITE_PATH . DS.'controller');
+ $registry->dispatcher->setPath (__SITE_PATH . DS.'controller');
 
  /*** load up the template ***/
  $registry->template = new template($registry);
 
+ $registry->router = new router($registry);
+  $registry->router->route();
  /*** load the controller ***/
- $registry->router->loader();
+ $registry->dispatcher->loader();
 
 ?>

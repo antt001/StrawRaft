@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="strawraft" default="CopySite" basedir=".">
+	<property name="WWW-Server" value="/home/antt/workspace/strawraft/"/>
+    <target name="CopySite">
+        <echo>${WWW-Server}</echo>
+	  	<copy todir= "${WWW-Server}">
+	    	<fileset dir=".">
+	      		<include name="**/*.php"/>
+		  		<include name="**/*.html"/>
+		  		<include name="**/*.txt"/>
+	    		<include name="**/*.tpl"/>
+	    		<include name="**/*.phtml"/>
+	    		<include name="**/*.css"/>
+	    		<include name="**/*.js"/>
+	    		<include name="**/*.gif"/>
+	    		<include name="**/fruitdbbackup.sql"/>
+	    		<include name="**/*.zip"/> 
+	    	</fileset>
+	  	</copy>
+	</target>
+</project>

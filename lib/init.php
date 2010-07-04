@@ -8,8 +8,8 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME'])
  /*** include the registry class ***/
  include __SITE_PATH . DS . 'lib' . DS . 'registry.class.php';
 
- /*** include the router class ***/
- include __SITE_PATH . DS . 'lib' . DS . 'router.class.php';
+ /*** include the dispatcher class ***/
+ include __SITE_PATH . DS . 'lib' . DS . 'dispatcher.class.php';
 
  /*** include the template class ***/
  include __SITE_PATH . DS . 'lib' . DS . 'template.class.php';

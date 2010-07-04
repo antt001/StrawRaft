@@ -23,7 +23,7 @@ if(!empty($msg)){
 	</tr>
 	</thead>
 <tr>
-<td><?php echo $subtitle; ?><br />
+<td><?php if(!empty($pvar)){echo $subtitle;} ?><br />
 <?php
 if(!empty($pvar)){
     echo '<input name="'.$pvar.'" id="'.$pvar.'"';
